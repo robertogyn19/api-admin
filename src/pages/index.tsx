@@ -1,17 +1,20 @@
 import React from 'react';
-import Head from 'next/head';
+import { Box, Heading, Container } from '@chakra-ui/react';
 
-import { Box, Heading } from '@chakra-ui/react';
+import { AccountsSize } from '../services/accounts';
+
+import AccountsList from '../components/AccountsList';
 
 const Home: React.FC = () => {
+  const size = AccountsSize();
+
   return (
     <div>
-      <Head>Home page</Head>
-
       <main>
-        <Box>
-          <Heading>Hello, World 123!</Heading>
-        </Box>
+        <Container>
+          <Heading>Lista de contas: {size}</Heading>
+          <AccountsList />
+        </Container>
       </main>
     </div>
   );
